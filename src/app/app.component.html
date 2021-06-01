@@ -4,14 +4,7 @@
       <div class="title-container">
         <h2>{{ title }}</h2>
       </div>
-      <form [formGroup]="angularForm" (ngSubmit)="onSubmit()">
-        <input
-          class="button"
-          type="submit"
-          value="Submit"
-          [disabled]="!angularForm.valid"
-        />
-      </form>
+      <app-dynamic-form [entries]="entries$ | async"></app-dynamic-form>
     </div>
   </div>
 </div>

@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { EntryBase } from './entry-base';
+import { EntryService } from './entry.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  providers: [EntryService],
 })
 export class AppComponent {
   title = 'Angular Form';
 
-  angularForm = new FormGroup({
-    name: new FormControl(''),
-    email: new FormControl(''),
-  });
+  entries$: Observable<EntryBase<any>[]>;
 
-  onSubmit() {
-    console.warn(this.angularForm.value);
+  constructor(service: EntryService) {
+    this.entries$ = service.getEntries();
   }
 }

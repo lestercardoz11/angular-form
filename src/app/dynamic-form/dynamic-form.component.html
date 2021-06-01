@@ -1,0 +1,6 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div *ngFor="let entry of entries">
+    <app-dynamic-input [entry]="entry" [form]="form"></app-dynamic-input>
+  </div>
+  <input class="button" type="submit" value="Submit" [disabled]="!form.valid" />
+</form>
