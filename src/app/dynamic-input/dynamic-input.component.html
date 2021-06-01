@@ -1,0 +1,32 @@
+<div [formGroup]="form">
+  <label [attr.for]="entry.key">{{ entry.label }}</label>
+  <div [ngSwitch]="entry.controlType">
+    <div *ngSwitchCase="'textbox'" class="input_field">
+      <input
+        [formControlName]="entry.key"
+        [id]="entry.key"
+        [type]="entry.type"
+        [placeholder]="entry.label"
+      />
+    </div>
+
+    <div *ngSwitchCase="'textarea'" class="input_field">
+      <textarea
+        [formControlName]="entry.key"
+        [id]="entry.key"
+        [placeholder]="entry.label"
+      ></textarea>
+    </div>
+
+    <div *ngSwitchCase="'dropdown'" class="input_field select_option">
+      <select [id]="entry.key" [formControlName]="entry.key">
+        <option *ngFor="let opt of entry.options" [value]="opt.key">
+          {{ opt.value }}
+        </option>
+      </select>
+      <div class="select_arrow"></div>
+    </div>
+  </div>
+
+  <!-- <div class="errorMessage" *ngIf="!isValid">{{ entry.label }} is required</div> -->
+</div>

@@ -1,0 +1,78 @@
+$primary: #27a9e1;
+$black: #1f2937;
+$grey: #cccccc;
+
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+.content {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  padding: 0 16px;
+  max-width: 960px;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  background: #f2f2f2;
+}
+
+.form-wrapper {
+  background: #fff;
+  width: 400px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 25px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  border-top: 5px solid $primary;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  h2 {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .title-container {
+    text-align: center;
+    padding-bottom: 15px;
+  }
+  input {
+    &[type="submit"] {
+      background: $primary;
+      height: 35px;
+      line-height: 35px;
+      width: 100%;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      color: #fff;
+      font-size: 1.1em;
+      margin-bottom: 10px;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background: darken($primary, 7%);
+      }
+      &:focus {
+        background: darken($primary, 7%);
+      }
+    }
+  }
+}
