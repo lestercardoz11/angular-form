@@ -1,0 +1,103 @@
+$primary: #27a9e1;
+$black: #1f2937;
+$grey: #cccccc;
+
+label {
+  font-size: 12px;
+  color: $primary;
+}
+
+.input_field {
+  position: relative;
+  margin-bottom: 20px;
+
+  input {
+    &[type="text"],
+    &[type="email"],
+    &[type="date"] {
+      width: 100%;
+      height: 40px;
+      padding: 10px;
+      border: 1px solid $grey;
+      box-sizing: border-box;
+      outline: none;
+    }
+    &[type="text"]:hover,
+    &[type="email"]:hover,
+    &[type="date"]:hover {
+      background: #fafafa;
+    }
+    &[type="text"]:focus,
+    &[type="email"]:focus,
+    &[type="date"]:focus {
+      border: 2px solid $primary;
+      background: #fafafa;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid $grey;
+    box-sizing: border-box;
+    outline: none;
+    &:hover {
+      background: #fafafa;
+    }
+    &:focus {
+      border: 2px solid $primary;
+      background: #fafafa;
+      outline: none;
+    }
+  }
+}
+
+.select_option {
+  position: relative;
+  width: 100%;
+  select {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    height: 40px;
+    cursor: pointer;
+    color: $black;
+    border: 1px solid $grey;
+    border-radius: 0;
+    background: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: all 0.2s ease;
+    &::-ms-expand {
+      display: none;
+    }
+    &:hover {
+      background: #fafafa;
+    }
+    &:focus {
+      border: 2px solid $primary;
+      background: #fafafa;
+      outline: none;
+    }
+  }
+}
+.select_arrow {
+  position: absolute;
+  top: calc(50% - 4px);
+  right: 15px;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  border-width: 8px 6px 0 6px;
+  border-style: solid;
+  border-color: #7b7b7b transparent transparent transparent;
+}
+
+.select_option select {
+  &:hover + .select_arrow,
+  &:focus + .select_arrow {
+    border-top-color: $black;
+  }
+}
