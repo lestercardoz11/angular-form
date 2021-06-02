@@ -6,7 +6,8 @@ export class EntryBase<T> {
   order: number;
   controlType: string;
   type: string;
-  options: { key: string; value: string }[];
+  readonly: boolean;
+  options: { key: string; value: string; manager: string }[];
 
   constructor(
     options: {
@@ -17,7 +18,8 @@ export class EntryBase<T> {
       order?: number;
       controlType?: string;
       type?: string;
-      options?: { key: string; value: string }[];
+      readonly?: boolean;
+      options?: { key: string; value: string; manager: string }[];
     } = {}
   ) {
     this.value = options.value;
@@ -27,6 +29,7 @@ export class EntryBase<T> {
     this.order = options.order === undefined ? 1 : options.order;
     this.controlType = options.controlType || '';
     this.type = options.type || '';
+    this.readonly = options.readonly || false;
     this.options = options.options || [];
   }
 }
