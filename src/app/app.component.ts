@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { EntryBase } from './entry-base';
-import { EntryService } from './entry.service';
+import { EntryBase } from './entry/entry-base';
+import { EntryService } from './entry/entry.service';
 
 @Component({
   selector: 'app-root',

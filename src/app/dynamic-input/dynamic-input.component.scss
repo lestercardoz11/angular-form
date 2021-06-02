@@ -37,12 +37,6 @@ label {
       border: 2px solid $primary;
       background: #fafafa;
     }
-
-    &:read-only {
-      &:focus {
-        border: 1px solid $grey;
-      }
-    }
   }
 
   textarea {
