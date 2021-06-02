@@ -41,7 +41,17 @@ input {
   }
 }
 
-.inside {
-  height: 20px;
-  background: pink;
+label {
+  font-size: 12px;
+  color: $primary;
+}
+
+.manager {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid $grey;
+  box-sizing: border-box;
+  outline: none;
 }

@@ -5,7 +5,6 @@ import { EntryBase } from './entry-base';
 import { EntryTextbox } from './entry-textbox';
 import { EntryDropdown } from './entry-dropdown';
 import { EntryTextarea } from './entry-textarea';
-import { EntryTextboxReadonly } from './entry-textbox-readonly';
 
 @Injectable()
 export class EntryService {
@@ -51,14 +50,6 @@ export class EntryService {
           { key: 'marketing', value: 'Marketing', manager: 'Egbert Holland' },
         ],
         order: 5,
-      }),
-
-      new EntryTextboxReadonly({
-        key: 'manager',
-        label: 'Manager',
-        type: 'text',
-        readonly: true,
-        order: 6,
       }),
     ];
 
