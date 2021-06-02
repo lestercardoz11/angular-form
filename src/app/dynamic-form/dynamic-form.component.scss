@@ -35,5 +35,13 @@ input {
     &:focus {
       background: darken($primary, 7%);
     }
+    &:disabled {
+      background: $grey;
+    }
   }
+}
+
+.inside {
+  height: 20px;
+  background: pink;
 }

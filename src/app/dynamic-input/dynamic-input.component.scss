@@ -1,6 +1,7 @@
 $primary: #27a9e1;
 $black: #1f2937;
 $grey: #cccccc;
+$red: #fca5a5;
 
 label {
   font-size: 12px;
@@ -21,6 +22,9 @@ label {
       border: 1px solid $grey;
       box-sizing: border-box;
       outline: none;
+      .invalid {
+        border: 2px solid $red;
+      }
     }
     &[type="text"]:hover,
     &[type="email"]:hover,
@@ -32,6 +36,12 @@ label {
     &[type="date"]:focus {
       border: 2px solid $primary;
       background: #fafafa;
+    }
+
+    &:read-only {
+      &:focus {
+        border: 1px solid $grey;
+      }
     }
   }
 

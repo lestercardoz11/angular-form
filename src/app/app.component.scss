@@ -14,13 +14,15 @@ $grey: #cccccc;
 }
 
 .content {
-  min-width: 100vw;
+  min-width: 100%;
   min-height: 100vh;
   display: flex;
-  padding: 0 16px;
+  padding: 20px;
+  margin: auto;
   max-width: 960px;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
 }
 
 body {
