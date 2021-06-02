@@ -20,7 +20,7 @@ export class DynamicInputComponent {
   }
 
   selectDepartment(event: any) {
-    const manager = event.target.selectedOptions[0].attributes[3].value;
+    const manager = event.target.selectedOptions[0].dataset.value;
     this.store.dispatch(ManagerActions({ manager }));
   }
 }
