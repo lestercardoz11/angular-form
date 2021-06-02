@@ -10,17 +10,6 @@
       />
     </div>
 
-    <div *ngSwitchCase="'textboxReadonly'" class="input_field">
-      <input
-        [formControlName]="entry.key"
-        [id]="entry.key"
-        [type]="entry.type"
-        [placeholder]="entry.label"
-        [readonly]="entry.readonly"
-        [value]="name"
-      />
-    </div>
-
     <div *ngSwitchCase="'textarea'" class="input_field">
       <textarea
         [formControlName]="entry.key"
@@ -34,9 +23,13 @@
         #selectList
         [id]="entry.key"
         [formControlName]="entry.key"
-        (change)="selectDepartment(selectList.value)"
+        (change)="selectDepartment($event)"
       >
-        <option *ngFor="let opt of entry.options" [value]="opt.manager">
+        <option
+          *ngFor="let opt of entry.options"
+          [value]="opt.value"
+          [attr.data-value]="opt.manager"
+        >
           {{ opt.value }}
         </option>
       </select>
