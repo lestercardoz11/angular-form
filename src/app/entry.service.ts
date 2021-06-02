@@ -5,13 +5,14 @@ import { EntryBase } from './entry-base';
 import { EntryTextbox } from './entry-textbox';
 import { EntryDropdown } from './entry-dropdown';
 import { EntryTextarea } from './entry-textarea';
+import { EntryTextboxReadonly } from './entry-textbox-readonly';
 
 @Injectable()
 export class EntryService {
   getEntries() {
     const entries: EntryBase<string>[] = [
       new EntryTextbox({
-        key: 'fullName',
+        key: 'name',
         label: 'Full Name',
         type: 'text',
         required: true,
@@ -19,7 +20,7 @@ export class EntryService {
       }),
 
       new EntryTextbox({
-        key: 'emailAddress',
+        key: 'email',
         label: 'Email',
         type: 'email',
         required: true,
@@ -27,7 +28,7 @@ export class EntryService {
       }),
 
       new EntryTextbox({
-        key: 'Birthdate',
+        key: 'birth-date',
         label: 'Date of Birth',
         type: 'date',
         order: 3,
@@ -43,13 +44,21 @@ export class EntryService {
         key: 'department',
         label: 'Department',
         options: [
-          { key: 'finance', value: 'Finance' },
-          { key: 'it', value: 'IT' },
-          { key: 'hr', value: 'HR' },
-          { key: 'operations', value: 'Operations' },
-          { key: 'marketing', value: 'Marketing' },
+          { key: 'finance', value: 'Finance', manager: 'Jeremy Middleton' },
+          { key: 'it', value: 'IT', manager: 'Bonnie Buckley' },
+          { key: 'hr', value: 'HR', manager: 'Donald Booth' },
+          { key: 'operations', value: 'Operations', manager: 'Lucas Hale' },
+          { key: 'marketing', value: 'Marketing', manager: 'Egbert Holland' },
         ],
         order: 5,
+      }),
+
+      new EntryTextboxReadonly({
+        key: 'manager',
+        label: 'Manager',
+        type: 'text',
+        readonly: true,
+        order: 6,
       }),
     ];
 

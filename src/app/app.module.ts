@@ -6,10 +6,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DynamicInputComponent } from './dynamic-input/dynamic-input.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './store/manager.reducer';
 
 @NgModule({
   declarations: [AppComponent, DynamicInputComponent, DynamicFormComponent],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    StoreModule.forRoot({ managerName: reducer }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
