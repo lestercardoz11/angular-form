@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { EntryBase } from '../entry-base';
-import { EntryControlService } from '../entry-control.service';
+import { EntryBase } from '../entry/entry-base';
+import { EntryControlService } from '../entry/entry-control.service';
 
 @Component({
   selector: 'app-dynamic-form',
