@@ -1,17 +1,4 @@
-$primary: #27a9e1;
-$black: #1f2937;
-$grey: #cccccc;
-
-:host {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 14px;
-  color: #333;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
-}
+@import "variables";
 
 input {
   &[type="submit"] {
@@ -51,7 +38,7 @@ label {
   height: 40px;
   padding: 10px;
   margin-bottom: 20px;
-  border: 1px solid $grey;
+  border-bottom: 1px solid $grey;
   box-sizing: border-box;
   outline: none;
 }
