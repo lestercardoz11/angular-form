@@ -2,10 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { of } from 'rxjs';
 import { EntryBase } from './entry-base';
-import { EntryTextbox } from './entry-textbox';
-import { EntryDropdown } from './entry-dropdown';
-import { EntryTextarea } from './entry-textarea';
-
+import { EntryTextbox, EntryDropdown, EntryTextarea } from './entry-types';
 @Injectable()
 export class EntryService {
   getEntries() {
