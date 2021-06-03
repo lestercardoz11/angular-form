@@ -5,10 +5,13 @@ label {
   color: $primary;
 }
 
-.input_field {
-  position: relative;
+.input-form-group {
   margin-bottom: 20px;
+}
 
+.input-field {
+  position: relative;
+  color: $black;
   input {
     &[type="text"],
     &[type="email"],
@@ -54,9 +57,10 @@ label {
   }
 }
 
-.select_option {
+.select-option {
   position: relative;
   width: 100%;
+  color: $black;
   select {
     display: inline-block;
     width: 100%;
@@ -84,7 +88,8 @@ label {
     }
   }
 }
-.select_arrow {
+
+.select-arrow {
   position: absolute;
   top: calc(50% - 4px);
   right: 15px;
@@ -96,9 +101,20 @@ label {
   border-color: #7b7b7b transparent transparent transparent;
 }
 
-.select_option select {
-  &:hover + .select_arrow,
-  &:focus + .select_arrow {
+.select-option select {
+  &:hover + .select-arrow,
+  &:focus + .select-arrow {
     border-top-color: $black;
   }
+}
+
+.error-message {
+  background-color: #fce4e4;
+  border: 1px solid #fcc2c3;
+  margin: 2px 0;
+  padding: 5px;
+  color: #d8000c;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 20px;
 }

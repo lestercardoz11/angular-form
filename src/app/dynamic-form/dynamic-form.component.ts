@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
+import { AlertService } from '../alert/alert.service';
 import { EntryBase } from '../entry/entry-base';
 import { EntryControlService } from '../entry/entry-control.service';
 
@@ -15,7 +16,11 @@ export class DynamicFormComponent implements OnInit {
   form!: FormGroup;
   public name: string = '';
 
-  constructor(private ecs: EntryControlService, private store: Store) {}
+  constructor(
+    private ecs: EntryControlService,
+    private store: Store,
+    private alertService: AlertService
+  ) {}
 
   ngOnInit() {
     this.form = this.ecs.toFormGroup(this.entries as EntryBase<string>[]);
@@ -24,7 +29,20 @@ export class DynamicFormComponent implements OnInit {
     });
   }
 
+  private displaySuccess() {
+    this.alertService.success('Thanks for filling out our form!');
+  }
+
+  private displayError(message: string) {
+    this.alertService.error(message);
+  }
+
   onSubmit() {
-    console.log(this.form.getRawValue());
+    try {
+      console.log(this.form.getRawValue());
+      this.displaySuccess();
+    } catch (e) {
+      this.displayError(e);
+    }
   }
 }
