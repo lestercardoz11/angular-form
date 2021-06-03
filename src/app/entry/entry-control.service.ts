@@ -11,7 +11,12 @@ export class EntryControlService {
 
     entries.forEach((entry) => {
       group[entry.key] = entry.required
-        ? new FormControl(entry.value || '', Validators.required)
+        ? entry.key === 'email'
+          ? new FormControl(
+              entry.value || '',
+              Validators.compose([Validators.required, Validators.email])
+            )
+          : new FormControl(entry.value || '', Validators.required)
         : new FormControl(entry.value || '');
     });
     return new FormGroup(group);
