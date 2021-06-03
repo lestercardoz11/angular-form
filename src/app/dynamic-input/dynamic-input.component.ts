@@ -19,6 +19,10 @@ export class DynamicInputComponent {
     return this.form.controls[this.entry.key].valid;
   }
 
+  get touched() {
+    return this.form.controls[this.entry.key].touched;
+  }
+
   selectDepartment(event: any) {
     const manager = event.target.selectedOptions[0].dataset.value;
     this.store.dispatch(ManagerActions({ manager }));

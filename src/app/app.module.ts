@@ -8,9 +8,10 @@ import { DynamicInputComponent } from './dynamic-input/dynamic-input.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './store/manager.reducer';
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
-  declarations: [AppComponent, DynamicInputComponent, DynamicFormComponent],
+  declarations: [AppComponent, DynamicInputComponent, DynamicFormComponent, AlertComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
