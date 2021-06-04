@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { AlertService } from '../alert/alert.service';
 import { EntryBase } from '../entry/entry-base';
 import { EntryControlService } from '../entry/entry-control.service';
+import { ManagerActions } from '../store/manager.action';
 
 @Component({
   selector: 'app-dynamic-form',
@@ -39,8 +40,10 @@ export class DynamicFormComponent implements OnInit {
 
   onSubmit() {
     try {
+      const manager = '';
       console.log(this.form.getRawValue());
       this.displaySuccess();
+      this.store.dispatch(ManagerActions({ manager }));
       this.form.reset();
     } catch (e) {
       this.displayError(e);
