@@ -1,12 +1,12 @@
 export class EntryBase<T> {
-  value: T | undefined;
+  value?: T | undefined;
   key: string;
   label: string;
-  required: boolean;
+  required?: boolean;
   order: number;
   controlType: string;
-  type: string;
-  options: { key: string; value: string; manager: string }[];
+  type?: string;
+  options?: { key: string; value: string; manager: string }[];
 
   constructor(
     options: {
