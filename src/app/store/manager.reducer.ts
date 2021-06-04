@@ -11,7 +11,7 @@ export const initialState: ManagerItem = {
 
 const managerReducer = createReducer(
   initialState,
-  on(ManagerActions, (state, { manager }) => ({ manager: manager }))
+  on(ManagerActions, ({ manager }) => ({ manager: manager }))
 );
 
 export function reducer(state: ManagerItem | undefined, action: Action) {

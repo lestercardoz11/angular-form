@@ -50,6 +50,7 @@ export class EntryService {
       }),
     ];
 
+    // renders components by it's order
     return of(entries.sort((a, b) => a.order - b.order));
   }
 }

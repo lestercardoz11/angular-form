@@ -7,7 +7,6 @@ import {
 } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { DynamicFormComponent } from '../dynamic-form/dynamic-form.component';
-import { EntryBase } from '../entry/entry-base';
 import { reducer } from '../store/manager.reducer';
 import { DynamicInputComponent } from './dynamic-input.component';
 
