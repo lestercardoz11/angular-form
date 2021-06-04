@@ -5,7 +5,6 @@ import {
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
-import { NavigationStart, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AlertMessages } from './alert-messages';
 import { Alert } from './alert.model';
@@ -22,11 +21,11 @@ export class AlertComponent implements OnInit, OnDestroy {
 
   alerts: Alert[] = [];
   alertSubscription: Subscription = new Subscription();
-  routeSubscription: Subscription = new Subscription();
 
-  constructor(private router: Router, private alertService: AlertService) {}
+  constructor(private alertService: AlertService) {}
 
   ngOnInit() {
+    // subscription represents a disposable resource
     this.alertSubscription = this.alertService
       .onAlert(this.id)
       .subscribe((alert) => {
@@ -35,29 +34,24 @@ export class AlertComponent implements OnInit, OnDestroy {
           return;
         }
 
+        // renders alert message
         this.alerts.push(alert);
       });
-
-    // clear alerts on location change
-    this.routeSubscription = this.router.events.subscribe((event) => {
-      if (event instanceof NavigationStart) {
-        this.alertService.clear(this.id);
-      }
-    });
   }
 
   ngOnDestroy() {
     // unsubscribe to avoid memory leaks
     this.alertSubscription.unsubscribe();
-    this.routeSubscription.unsubscribe();
   }
 
+  // method to close alert
   removeAlert(alert: Alert) {
     if (!this.alerts.includes(alert)) return;
 
     this.alerts = this.alerts.filter((x) => x !== alert);
   }
 
+  // dynamic css classes depending on the alert type
   cssClass(alert: Alert) {
     if (!alert) return;
 

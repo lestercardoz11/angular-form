@@ -13,20 +13,17 @@ export class AlertService {
   });
   private defaultId = 'default-alert';
 
+  // handle alert operations
   onAlert(id = this.defaultId): Observable<Alert> {
     return this.subject.asObservable().pipe(filter((x) => x && x.id === id));
   }
 
-  success(message: string, options?: any) {
-    this.alert(
-      new Alert({ ...options, alertType: AlertMessages.SUCCESS, message })
-    );
+  success(message: string) {
+    this.alert(new Alert({ alertType: AlertMessages.SUCCESS, message }));
   }
 
-  error(message: string, options?: any) {
-    this.alert(
-      new Alert({ ...options, alertType: AlertMessages.ERROR, message })
-    );
+  error(message: string) {
+    this.alert(new Alert({ alertType: AlertMessages.ERROR, message }));
   }
 
   alert(alert: Alert) {

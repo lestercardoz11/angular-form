@@ -11,7 +11,12 @@ import { reducer } from './store/manager.reducer';
 import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
-  declarations: [AppComponent, DynamicInputComponent, DynamicFormComponent, AlertComponent],
+  declarations: [
+    AppComponent,
+    DynamicInputComponent,
+    DynamicFormComponent,
+    AlertComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

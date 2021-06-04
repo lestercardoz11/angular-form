@@ -41,6 +41,7 @@ export class DynamicFormComponent implements OnInit {
     try {
       console.log(this.form.getRawValue());
       this.displaySuccess();
+      this.form.reset();
     } catch (e) {
       this.displayError(e);
     }
