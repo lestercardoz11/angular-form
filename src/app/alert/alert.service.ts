@@ -13,6 +13,7 @@ export class AlertService {
   });
   private defaultId = 'default-alert';
 
+  // handle alert operations
   onAlert(id = this.defaultId): Observable<Alert> {
     return this.subject.asObservable().pipe(filter((x) => x && x.id === id));
   }
